@@ -26,13 +26,7 @@ if len(sys.argv) < 2:
 
 project_name = sys.argv[1]
 
-client = pymongo.MongoClient(
-    connection_string,
-    tls=True,
-    tlsAllowInvalidCertificates=False,  # optional
-    serverSelectionTimeoutMS=5000
-)
-# client = pymongo.MongoClient(connection_string)
+client = pymongo.MongoClient(connection_string)
 
 # Accessing the database
 db = client[db_name]
