@@ -2,6 +2,7 @@ import os
 import sys
 import pymongo
 import json
+import ssl
 
 # Check if the environment variables are set
 if 'MONGO_URL' not in os.environ:
