@@ -29,8 +29,8 @@ project_name = sys.argv[1]
 client = pymongo.MongoClient(
     connection_string,
     tls=True,
-    tlsAllowInvalidCertificates=False,
-    tlsVersion=ssl.PROTOCOL_TLSv1_2  # correct camelCase
+    tlsAllowInvalidCertificates=False,  # optional
+    serverSelectionTimeoutMS=5000
 )
 # client = pymongo.MongoClient(connection_string)
 
