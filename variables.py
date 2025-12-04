@@ -30,7 +30,7 @@ client = pymongo.MongoClient(
     connection_string,
     tls=True,
     tlsAllowInvalidCertificates=False,
-    tlsVersion=ssl.PROTOCOL_TLSv1_2
+    tlsVersion=ssl.PROTOCOL_TLSv1_2  # correct camelCase
 )
 # client = pymongo.MongoClient(connection_string)
 
