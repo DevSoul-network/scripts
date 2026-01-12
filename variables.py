@@ -35,7 +35,7 @@ db = client[db_name]
 collection = db[collection_name]
 
 # Find the record where the project name is provided as an argument
-result = collection.find_one({"project": project})
+result = collection.find_one({"project": project_name})
 
 # Extracting and storing the 'vars' attribute or raising an error if the project does not exist
 if result and 'vars' in result:
