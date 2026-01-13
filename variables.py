@@ -35,17 +35,13 @@ db = client[db_name]
 collection = db[collection_name]
 
 # Find the record where the project name is provided as an argument
-for doc in collection.find():
-    print(doc)
 result = collection.find_one({"project": project_name})
 
 # Extracting and storing the 'vars' attribute or raising an error if the project does not exist
-if result:
-    print('here')
-    if 'vars' in result:
+if result and 'vars' in result:
         vars_data = result['vars']
         with open(file_name, 'w') as file:
             for key, value in vars_data.items():
                 file.write(f"{key}={value}\n")
 else:
-    raise ProjectNotFoundError(f"Project '{project_name}' does not exist in the database.")
+    raise ProjectNotFoundError(f"Project '{project}' does not exist in the database.")
