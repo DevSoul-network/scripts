@@ -24,7 +24,7 @@ if len(sys.argv) < 2:
     print("Usage: python script.py project_name")
     sys.exit(1)
 
-project_name = sys.argv[1]
+project_name = trim(sys.argv[1])
 
 client = pymongo.MongoClient(connection_string)
 
