@@ -44,4 +44,4 @@ if result and 'vars' in result:
         for key, value in vars_data.items():
             file.write(f"{key}={value}\n")
 else:
-    raise ProjectNotFoundError(f"Project '{project}' does not exist in the database.")
+    raise ProjectNotFoundError(f"Project '{project_name}' does not exist in the database.")
